@@ -1,0 +1,4 @@
+# Keep the deposited scientific data in canonical LF format on GitHub.
+# The original CRLF byte checksums remain recorded in MANIFEST_SHA256.csv.
+raw_iv/**/*.dat text eol=lf
+PAIRING_MAP.csv text eol=lf
