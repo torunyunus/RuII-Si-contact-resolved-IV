@@ -8,7 +8,6 @@ on:
       - "PAIRING_MAP.csv"
       - "requirements.txt"
       - "reproduce_*.py"
-      - ".github/workflows/validate.yml"
   workflow_dispatch:
 
 jobs:
