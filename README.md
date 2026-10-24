@@ -12,7 +12,7 @@ This repository provides the dataset and analysis code for the contact-resolved 
 - `reproduce_rank_analysis.py`, `reproduce_step2.py`, `reproduce_step3.py`, `reproduce_superposition.py`: analysis scripts.
 - `requirements.txt`: Python dependencies.
 
-The original instrument exports are preserved byte for byte. Each `.dat` file contains recorded voltage (V), current magnitude (A), and **signed current (A)** in its first three numeric columns. Analyses use the signed-current column. The pairing map links the repository file names to the retained instrument-export names. Contact identifiers label the measured diode contacts; they are not a verified spatial map.
+The deposited files preserve the original numerical measurements. Git normalized Windows CRLF line endings to LF during upload. `MANIFEST_SHA256.csv` records SHA-256 checksums of the original CRLF source files; the [automated validator](.github/workflows/validate.yml) reconstructs these line endings before checking the original-source digests. Each `.dat` file contains recorded voltage (V), current magnitude (A), and **signed current (A)** in its first three numeric columns. Analyses use the signed-current column. The pairing map links the repository file names to the retained instrument-export names. Contact identifiers label the measured diode contacts; they are not a verified spatial map.
 
 ## Reproduce the main and supplementary calculations
 
@@ -30,6 +30,6 @@ python reproduce_superposition.py
 
 ## Data scope and citation
 
-The dataset includes the measurements actually analyzed in the article; unrelated preparation speeds and other characterization records are not deposited. For citation and reproducibility, refer to the **specific tagged GitHub Release** and its commit SHA, rather than the mutable default branch. The paper DOI and Release URL can be added to `CITATION.cff` when assigned. GitHub is not a guaranteed permanent data archive.
+The dataset includes the measurements actually analyzed in the article; unrelated preparation speeds and other characterization records are not deposited. For citation and reproducibility, use the exact commit SHA or a tagged GitHub Release rather than the mutable default branch. A `v1.0.0` Release has not yet been published. GitHub is not a guaranteed permanent data archive.
 
-The data-sharing permissions and licence should be agreed by the experimental data rights holders and co-authors before public release.
+Reuse rights are governed by the applicable rights holders; no license has been assigned to this repository.
