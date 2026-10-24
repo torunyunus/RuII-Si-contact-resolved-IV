@@ -8,6 +8,7 @@ on:
       - "PAIRING_MAP.csv"
       - "requirements.txt"
       - "reproduce_*.py"
+      - ".github/workflows/validate.yml"
   workflow_dispatch:
 
 jobs:
@@ -18,7 +19,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - name: Verify counts and SHA-256 manifest
+      - name: Verify data completeness and original source checksums
         shell: bash
         run: |
           python - <<'PY'
@@ -28,16 +29,36 @@ jobs:
           files = list((root / "raw_iv").rglob("*.dat"))
           a = list((root / "raw_iv" / "1000").glob("*.dat"))
           b = list((root / "raw_iv" / "2000").glob("*.dat"))
-          pairs = list(csv.DictReader(open("PAIRING_MAP.csv", newline="", encoding="utf-8-sig")))
-          manifest = list(csv.DictReader(open("MANIFEST_SHA256.csv", newline="", encoding="utf-8-sig")))
-          assert (len(files), len(a), len(b), len(pairs)) == (100, 60, 40, 50)
-          assert len(manifest) == 123
+          with open("PAIRING_MAP.csv", newline="", encoding="utf-8-sig") as f:
+              pairs = list(csv.DictReader(f))
+          with open("MANIFEST_SHA256.csv", newline="", encoding="utf-8-sig") as f:
+              manifest = list(csv.DictReader(f))
+          assert (len(files), len(a), len(b), len(pairs)) == (100, 60, 40, 50), "Dataset counts do not match"
+          assert len(manifest) == 123, "Unexpected number of original-source manifest rows"
+          normalized = 0
           for row in manifest:
-              p = root / row["relative_path"]
-              assert p.is_file(), f"Missing {p}"
-              assert p.stat().st_size == int(row["size_bytes"]), f"Wrong size {p}"
-              assert hashlib.sha256(p.read_bytes()).hexdigest() == row["sha256"], f"Wrong checksum {p}"
-          print("Validated 100 original IV files, 50 pairs, and 123 manifest hashes")
+              name = row["relative_path"]
+              path = root / name
+              assert path.is_file(), f"Missing {path}"
+              data = path.read_bytes()
+              expected_size = int(row["size_bytes"])
+              expected_hash = row["sha256"]
+              valid = len(data) == expected_size and hashlib.sha256(data).hexdigest() == expected_hash
+              if not valid and (name == "PAIRING_MAP.csv" or name.startswith("raw_iv/") and name.endswith(".dat")):
+                  # GitHub Desktop normalizes Windows CRLF to LF when committing text data.
+                  # Reconstruct original CRLF bytes before comparing the original-source manifest.
+                  assert b"\r" not in data, f"Unexpected line endings in {name}"
+                  source_bytes = data.replace(b"\n", b"\r\n")
+                  valid = (len(source_bytes) == expected_size and
+                           hashlib.sha256(source_bytes).hexdigest() == expected_hash)
+                  if valid:
+                      normalized += 1
+              assert valid, f"Original-source checksum mismatch: {name}"
+          for pair in pairs:
+              for key in ("dark_file", "light_file"):
+                  assert (root / pair[key]).is_file(), f"Missing paired scan: {pair[key]}"
+          print(f"PASS: 100 signed I-V exports, 50 pairs, {len(manifest)} source checksums; "
+                f"{normalized} text files LF-normalized in Git")
           PY
       - name: Install scientific Python dependencies
         run: python -m pip install -r requirements.txt
