@@ -1,27 +1,35 @@
-# Contact-resolved Ru(II)/p-Si Schottky diode I–V dataset
+# Contact-resolved Ru(II)/p-Si Schottky diode I–V measurements
 
-This repository accompanies the study of reverse-bias photocurrent and photovoltaic power from contact-matched measurements of Al/Ru(II)-complex/p-Si/Al Schottky diodes.
+This repository provides the dataset and analysis code for the contact-resolved comparison of reverse-bias photocurrent and photovoltaic power in Al/Ru(II)-complex/p-Si/Al diodes. It contains **50 dark/illuminated measurement pairs (100 instrument-export curves)**: 30 contacts from the 1000 rpm specimen and 20 from the 2000 rpm specimen.
 
-## Dataset scope
+## Contents
 
-The prepared deposition package contains **50 matched dark/illuminated current–voltage pairs**: 30 contacts from the 1000 rpm specimen and 20 from the 2000 rpm specimen, for a total of 100 signed I–V export files. It also includes a contact pairing map, SHA-256 checksums, derived metrics, supplementary figures and Python reproduction scripts. No 3000 rpm records form part of this dataset.
+- `raw_iv/1000/` and `raw_iv/2000/`: the signed dark and illuminated I–V records used in the article.
+- `PAIRING_MAP.csv`: specimen identifier, contact identifier, paired source files and original archive-member names.
+- `MANIFEST_SHA256.csv`: file paths, sizes and SHA-256 checksums.
+- `contact_metrics.csv` and `rank_summary.csv`: contact-level and specimen-level rank comparisons.
+- `derived/`: supplementary calculations and figures, including the per-contact leave-one-out Spearman analysis (`LOCO_spearman.csv`).
+- `reproduce_rank_analysis.py`, `reproduce_step2.py`, `reproduce_step3.py`, `reproduce_superposition.py`: analysis scripts.
+- `requirements.txt`: Python dependencies.
 
-## Repository status
+The original instrument exports are preserved byte for byte. Each `.dat` file contains recorded voltage (V), current magnitude (A), and **signed current (A)** in its first three numeric columns. Analyses use the signed-current column. The pairing map links the repository file names to the retained instrument-export names. Contact identifiers label the measured diode contacts; they are not a verified spatial map.
 
-**Dataset upload pending.** This README does not mean that the measurement files, code or a tagged release have been uploaded. Please do not cite a release until the files and version are publicly available and validated.
+## Reproduce the main and supplementary calculations
 
-## Expected contents
+With Python 3.10+ installed, run:
 
-- `raw_iv/1000/`, `raw_iv/2000/` — measured signed dark/light I–V exports
-- `PAIRING_MAP.csv` and `MANIFEST_SHA256.csv` — source pairing and integrity manifest
-- `contact_metrics.csv`, `rank_summary.csv`, `derived/` — contact-level and sensitivity results
-- `reproduce_rank_analysis.py`, `reproduce_step2.py`, `reproduce_step3.py`, `reproduce_superposition.py` — reproducibility scripts
-- `requirements.txt` and `CITATION.cff`
+```bash
+python -m pip install -r requirements.txt
+python reproduce_rank_analysis.py
+python reproduce_step2.py . --out derived/step2
+python reproduce_step3.py . --out derived/step3
+python reproduce_superposition.py
+```
 
-Once uploaded, verify that all 100 I–V files and accompanying outputs are present, run the four scripts, and create a versioned release (e.g. `v1.0.0`). Data-sharing permission should be confirmed by the relevant authors before public deposition.
+`reproduce_rank_analysis.py` also generates `derived/LOCO_spearman.csv` with one leave-one-contact-out Spearman coefficient per contact. The remaining scripts reproduce the voltage-dependent controls, contact-specific quality assessments, and the normalized photocurrent/superposition analysis. See the accompanying paper and electronic supplementary material for the definitions and interpretation of each derived quantity.
 
-## Related manuscript
+## Data scope and citation
 
-*Contact-resolved comparison of reverse-bias photocurrent and photovoltaic power in Ru(II)-interlayer/p-Si Schottky diodes.*
+The dataset includes the measurements actually analyzed in the article; unrelated preparation speeds and other characterization records are not deposited. For citation and reproducibility, refer to the **specific tagged GitHub Release** and its commit SHA, rather than the mutable default branch. The paper DOI and Release URL can be added to `CITATION.cff` when assigned. GitHub is not a guaranteed permanent data archive.
 
-This repository is the intended code/data access point; the article DOI will be linked after publication.
+The data-sharing permissions and licence should be agreed by the experimental data rights holders and co-authors before public release.

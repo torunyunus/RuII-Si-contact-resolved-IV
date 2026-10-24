@@ -1,0 +1,15 @@
+rpm,contact,trace,flag,count,min_flag_voltage_V,max_flag_voltage_V
+1000,4c,dark,nonmonotonic_voltage,2,1.779948,1.93999
+2000,1b,dark,nonmonotonic_voltage,2,1.942831,1.943389
+2000,1b,dark,near_100mA_compliance,4,1.940015,1.943389
+2000,1b,illuminated,nonmonotonic_voltage,2,1.954729,1.955566
+2000,1b,illuminated,near_100mA_compliance,3,1.954052,1.955566
+2000,2d,dark,near_100mA_compliance,1,2.000021,2.000021
+2000,2d,illuminated,near_100mA_compliance,2,1.980046,1.985181
+2000,3d,dark,near_100mA_compliance,1,1.99672,1.99672
+2000,3e,dark,nonmonotonic_voltage,2,1.944622,1.945286
+2000,3e,dark,near_100mA_compliance,4,1.939995,1.945286
+2000,3e,illuminated,nonmonotonic_voltage,3,1.936995,1.939092
+2000,3e,illuminated,near_100mA_compliance,4,1.936118,1.939092
+2000,4c,illuminated,near_100mA_compliance,1,2.000013,2.000013
+2000,4f,dark,near_100mA_compliance,1,2.000009,2.000009

@@ -1,0 +1,51 @@
+rpm,contact,dark_file,light_file,source_dark_member,source_light_member
+1000,1a,raw_iv/1000/1a_dark.dat,raw_iv/1000/1a_light.dat,1000rpm/1a k.dat,1000rpm/1a stca.dat
+1000,1b,raw_iv/1000/1b_dark.dat,raw_iv/1000/1b_light.dat,1000rpm/1b k.dat,1000rpm/1b stca.dat
+1000,1c,raw_iv/1000/1c_dark.dat,raw_iv/1000/1c_light.dat,1000rpm/1c k.dat,1000rpm/1c stca.dat
+1000,1d,raw_iv/1000/1d_dark.dat,raw_iv/1000/1d_light.dat,1000rpm/1d k.dat,1000rpm/1d stca.dat
+1000,1e,raw_iv/1000/1e_dark.dat,raw_iv/1000/1e_light.dat,1000rpm/1e k.dat,1000rpm/1e stca.dat
+1000,2a,raw_iv/1000/2a_dark.dat,raw_iv/1000/2a_light.dat,1000rpm/2a k.dat,1000rpm/2a stca.dat
+1000,2b,raw_iv/1000/2b_dark.dat,raw_iv/1000/2b_light.dat,1000rpm/2b k.dat,1000rpm/2b stca.dat
+1000,2c,raw_iv/1000/2c_dark.dat,raw_iv/1000/2c_light.dat,1000rpm/2c k1000.dat,1000rpm/2c scta 1000.dat
+1000,2d,raw_iv/1000/2d_dark.dat,raw_iv/1000/2d_light.dat,1000rpm/2d k.dat,1000rpm/2d stca.dat
+1000,2e,raw_iv/1000/2e_dark.dat,raw_iv/1000/2e_light.dat,1000rpm/2e k.dat,1000rpm/2e stca.dat
+1000,3a,raw_iv/1000/3a_dark.dat,raw_iv/1000/3a_light.dat,1000rpm/3a k.dat,1000rpm/3a stca.dat
+1000,3b,raw_iv/1000/3b_dark.dat,raw_iv/1000/3b_light.dat,1000rpm/3b k.dat,1000rpm/3b stca.dat
+1000,3c,raw_iv/1000/3c_dark.dat,raw_iv/1000/3c_light.dat,1000rpm/3c k.dat,1000rpm/3c stca.dat
+1000,3d,raw_iv/1000/3d_dark.dat,raw_iv/1000/3d_light.dat,1000rpm/3d k.dat,1000rpm/3d stca.dat
+1000,3e,raw_iv/1000/3e_dark.dat,raw_iv/1000/3e_light.dat,1000rpm/3e k.dat,1000rpm/3e stca.dat
+1000,4a,raw_iv/1000/4a_dark.dat,raw_iv/1000/4a_light.dat,1000rpm/4a k.dat,1000rpm/4a scta.dat
+1000,4b,raw_iv/1000/4b_dark.dat,raw_iv/1000/4b_light.dat,1000rpm/4b k.dat,1000rpm/4b stca.dat
+1000,4c,raw_iv/1000/4c_dark.dat,raw_iv/1000/4c_light.dat,1000rpm/4c k.dat,1000rpm/4c stca.dat
+1000,4d,raw_iv/1000/4d_dark.dat,raw_iv/1000/4d_light.dat,1000rpm/4d k.dat,1000rpm/4d stca.dat
+1000,4e,raw_iv/1000/4e_dark.dat,raw_iv/1000/4e_light.dat,1000rpm/4e k.dat,1000rpm/4e stca.dat
+1000,5a,raw_iv/1000/5a_dark.dat,raw_iv/1000/5a_light.dat,1000rpm/5a k.dat,1000rpm/5a stca.dat
+1000,5b,raw_iv/1000/5b_dark.dat,raw_iv/1000/5b_light.dat,1000rpm/5b k.dat,1000rpm/5b stca.dat
+1000,5c,raw_iv/1000/5c_dark.dat,raw_iv/1000/5c_light.dat,1000rpm/5c k.dat,1000rpm/5c stca.dat
+1000,5d,raw_iv/1000/5d_dark.dat,raw_iv/1000/5d_light.dat,1000rpm/5d k.dat,1000rpm/5d stca.dat
+1000,5e,raw_iv/1000/5e_dark.dat,raw_iv/1000/5e_light.dat,1000rpm/5e k 1000.dat,1000rpm/5e stca1000.dat
+1000,6a,raw_iv/1000/6a_dark.dat,raw_iv/1000/6a_light.dat,1000rpm/6a k.dat,1000rpm/6a stca.dat
+1000,6b,raw_iv/1000/6b_dark.dat,raw_iv/1000/6b_light.dat,1000rpm/6b k.dat,1000rpm/6b stca.dat
+1000,6c,raw_iv/1000/6c_dark.dat,raw_iv/1000/6c_light.dat,1000rpm/6c k.dat,1000rpm/6c stca.dat
+1000,6d,raw_iv/1000/6d_dark.dat,raw_iv/1000/6d_light.dat,1000rpm/6d k.dat,1000rpm/6d stca.dat
+1000,6e,raw_iv/1000/6e_dark.dat,raw_iv/1000/6e_light.dat,1000rpm/6e k.dat,1000rpm/6e stca.dat
+2000,1b,raw_iv/2000/1b_dark.dat,raw_iv/2000/1b_light.dat,2000 rpm/1b k.dat,2000 rpm/1b stca.dat
+2000,1c,raw_iv/2000/1c_dark.dat,raw_iv/2000/1c_light.dat,2000 rpm/1c k 2000.dat,2000 rpm/1c stca2000.dat
+2000,1d,raw_iv/2000/1d_dark.dat,raw_iv/2000/1d_light.dat,2000 rpm/1d k.dat,2000 rpm/1d stca.dat
+2000,1e,raw_iv/2000/1e_dark.dat,raw_iv/2000/1e_light.dat,2000 rpm/1e k2000.dat,2000 rpm/1e stca2000.dat
+2000,1f,raw_iv/2000/1f_dark.dat,raw_iv/2000/1f_light.dat,2000 rpm/1f k.dat,2000 rpm/1f stca.dat
+2000,2b,raw_iv/2000/2b_dark.dat,raw_iv/2000/2b_light.dat,2000 rpm/2b k 2000.dat,2000 rpm/2b stca2000.dat
+2000,2c,raw_iv/2000/2c_dark.dat,raw_iv/2000/2c_light.dat,2000 rpm/2c k.dat,2000 rpm/2c stca.dat
+2000,2d,raw_iv/2000/2d_dark.dat,raw_iv/2000/2d_light.dat,2000 rpm/2d k.dat,2000 rpm/2d stca.dat
+2000,2e,raw_iv/2000/2e_dark.dat,raw_iv/2000/2e_light.dat,2000 rpm/2e k.dat,2000 rpm/2e stca.dat
+2000,2f,raw_iv/2000/2f_dark.dat,raw_iv/2000/2f_light.dat,2000 rpm/2f k.dat,2000 rpm/2f stca.dat
+2000,3b,raw_iv/2000/3b_dark.dat,raw_iv/2000/3b_light.dat,2000 rpm/3b k.dat,2000 rpm/3b stca.dat
+2000,3c,raw_iv/2000/3c_dark.dat,raw_iv/2000/3c_light.dat,2000 rpm/3c k.dat,2000 rpm/3c stca.dat
+2000,3d,raw_iv/2000/3d_dark.dat,raw_iv/2000/3d_light.dat,2000 rpm/3d k.dat,2000 rpm/3d stca.dat
+2000,3e,raw_iv/2000/3e_dark.dat,raw_iv/2000/3e_light.dat,2000 rpm/3e k.dat,2000 rpm/3e stca.dat
+2000,3f,raw_iv/2000/3f_dark.dat,raw_iv/2000/3f_light.dat,2000 rpm/3f k.dat,2000 rpm/3f stca.dat
+2000,4b,raw_iv/2000/4b_dark.dat,raw_iv/2000/4b_light.dat,2000 rpm/4b k.dat,2000 rpm/4b stca.dat
+2000,4c,raw_iv/2000/4c_dark.dat,raw_iv/2000/4c_light.dat,2000 rpm/4c k.dat,2000 rpm/4c stca.dat
+2000,4d,raw_iv/2000/4d_dark.dat,raw_iv/2000/4d_light.dat,2000 rpm/4d k.dat,2000 rpm/4d stca.dat
+2000,4e,raw_iv/2000/4e_dark.dat,raw_iv/2000/4e_light.dat,2000 rpm/4e k.dat,2000 rpm/4e stca.dat
+2000,4f,raw_iv/2000/4f_dark.dat,raw_iv/2000/4f_light.dat,2000 rpm/4f k.dat,2000 rpm/4f stca.dat

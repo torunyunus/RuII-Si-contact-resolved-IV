@@ -1,0 +1,7 @@
+subset,n,reverse_bias_descriptor,spearman_rho,median_Pmax_uW,contacts
+All paired contacts,20,|Iph(-1 V)|,0.293233083,2.77352877,1b;1c;1d;1e;1f;2b;2c;2d;2e;2f;3b;3c;3d;3e;3f;4b;4c;4d;4e;4f
+Excluding positive Iph at -1 V,18,|Iph(-1 V)|,0.459236326,2.86319404,1b;1c;1e;2b;2c;2d;2e;2f;3b;3c;3d;3e;3f;4b;4c;4d;4e;4f
+Excluding high-forward-current alerts,14,|Iph(-1 V)|,0.195604396,2.55766221,1c;1d;1e;1f;2b;2c;2e;2f;3b;3c;3f;4b;4d;4e
+Excluding voltage-order alerts,18,|Iph(-1 V)|,0.300309598,2.80904959,1c;1d;1e;1f;2b;2c;2d;2e;2f;3b;3c;3d;3f;4b;4c;4d;4e;4f
+Excluding all three QC categories,12,|Iph(-1 V)|,0.440559441,2.88939478,1c;1e;2b;2c;2e;2f;3b;3c;3f;4b;4d;4e
+All: illuminated current magnitude at -1 V,20,|Ilight(-1 V)|,0.421052632,2.77352877,1b;1c;1d;1e;1f;2b;2c;2d;2e;2f;3b;3c;3d;3e;3f;4b;4c;4d;4e;4f

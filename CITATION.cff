@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "Please cite the related article and the tagged release of this data and code."
+title: "Contact-resolved Ru(II)-interlayer/p-Si Schottky diode I-V measurements and analysis"
+version: 1.0.0
+authors:
+  - family-names: "Doğan"
+    given-names: "Hülya"
+  - family-names: "Pürlü"
+    given-names: "Mikail"
+  - family-names: "Torun"
+    given-names: "Yunis"
