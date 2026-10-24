@@ -1,0 +1,52 @@
+name: Validate RuII dataset and reproducibility
+
+on:
+  push:
+    paths:
+      - "raw_iv/**"
+      - "MANIFEST_SHA256.csv"
+      - "PAIRING_MAP.csv"
+      - "requirements.txt"
+      - "reproduce_*.py"
+      - ".github/workflows/validate.yml"
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Verify counts and SHA-256 manifest
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import csv, hashlib
+          root = Path(".")
+          files = list((root / "raw_iv").rglob("*.dat"))
+          a = list((root / "raw_iv" / "1000").glob("*.dat"))
+          b = list((root / "raw_iv" / "2000").glob("*.dat"))
+          pairs = list(csv.DictReader(open("PAIRING_MAP.csv", newline="", encoding="utf-8-sig")))
+          manifest = list(csv.DictReader(open("MANIFEST_SHA256.csv", newline="", encoding="utf-8-sig")))
+          assert (len(files), len(a), len(b), len(pairs)) == (100, 60, 40, 50)
+          assert len(manifest) == 123
+          for row in manifest:
+              p = root / row["relative_path"]
+              assert p.is_file(), f"Missing {p}"
+              assert p.stat().st_size == int(row["size_bytes"]), f"Wrong size {p}"
+              assert hashlib.sha256(p.read_bytes()).hexdigest() == row["sha256"], f"Wrong checksum {p}"
+          print("Validated 100 original IV files, 50 pairs, and 123 manifest hashes")
+          PY
+      - name: Install scientific Python dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Reproduce rank analyses
+        run: python reproduce_rank_analysis.py
+      - name: Reproduce voltage-dependent results
+        run: python reproduce_step2.py . --out derived/step2
+      - name: Reproduce quality-control results
+        run: python reproduce_step3.py . --out derived/step3
+      - name: Reproduce photocurrent superposition
+        run: python reproduce_superposition.py
